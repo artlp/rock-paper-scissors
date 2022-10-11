@@ -1,5 +1,8 @@
 console.log("starting RPS game");
-const choiceButton = document.querySelectorAll(`.gamechoice`);
+const choiceButton = document.querySelectorAll(`.game-button`);
+const battleLog = document.querySelector(`.battlelog`);
+const scorediv = document.querySelector(`.score`);
+const finaldiv = document.querySelector(`.finalresult`);
 let randomNumber;
 let playerChoice;
 let computerChoice;
@@ -25,15 +28,15 @@ function getComputerChoice() {
 
 choiceButton.forEach((item) => {
     (item.addEventListener(`click`, function () {
-        if (+item.value === 0) {
+        if (+item.getAttribute(`data-value`) === 0) {
             console.log("You chose Rock");
-        } else if (+item.value === 1) {
+        } else if (+item.getAttribute(`data-value`) === 1) {
             console.log("You chose Paper");
-        } else if (+item.value === 2) {
+        } else if (+item.getAttribute(`data-value`) === 2) {
             console.log("You chose Scissors");
         } else { }
         item.style.backgroundColor = "red";
-        playerChoice = +item.value;
+        playerChoice = +item.getAttribute(`data-value`);
         game();
     }));
 
@@ -41,55 +44,55 @@ choiceButton.forEach((item) => {
 function playRound(computerChoice, playerChoice) {
     switch (true) {
         case (computerChoice === 0 && playerChoice === 0):
-            console.log("DRAW, you both chose Rock");
             roundCounter++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            battleLog.innerHTML += `Round ${roundCounter}: DRAW, you both chose Rock <br>`;
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 0 && playerChoice === 1):
-            console.log("Player wins, Paper beats Rock");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Paper beats Rock <br>`;
             playerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 0 && playerChoice === 2):
-            console.log("Computer wins, Rock beats Scissors");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Rock beats Scissors <br>`;
             computerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 0):
-            console.log("Computer wins, Paper beats Rock");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Paper beats Rock <br>`;
             computerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 1):
-            console.log("%c DRAW, you both chose Paper", "color: skyblue");
             roundCounter++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            battleLog.innerHTML += `Round ${roundCounter}:  DRAW, you both chose Paper <br>`;
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 2):
-            console.log("Player wins, Scissors beat Paper");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Scissors beat Paper <br>`;
             playerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 0):
-            console.log("Player wins, Rock beats Scissors");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Rock beats Scissors <br>`;
             playerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 1):
-            console.log("Computer wins, Scissors beat Paper");
             roundCounter++;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Scissors beat Paper <br>`;
             computerScore++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 2):
-            console.log("DRAW, you both chose Scissors");
             roundCounter++;
-            console.log(`Round: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`);
+            battleLog.innerHTML += `Round ${roundCounter}: DRAW, you both chose Scissors <br>`;
+            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
 
         default:
@@ -99,7 +102,11 @@ function playRound(computerChoice, playerChoice) {
 }
 
 function game() {
-    while ((computerScore < 5) && (playerScore < 5)) {
+    if (computerScore === 5) {
+        finaldiv.innerText = `COMPUTER WINS`;
+    } else if (playerScore === 5) {
+        finaldiv.innerText = `PLAYER WINS`;
+    } else {
         getComputerChoice();
         playRound(computerChoice, playerChoice);
     }

@@ -1,23 +1,82 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(./img/bg.jpg);
+    background-repeat: repeat;
+    background-size: auto;
+color: rgb(0, 119, 255);
+    font-family: 'Patua One', cursive;
+}
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 4rem;
+    line-height: 6rem;
+    margin: 40px auto;
+    text-align: center;
+    text-shadow: 0px 4px 1px black;
 }
 .buttons {
+    box-sizing: border-box;
     display:flex;
+    /* align-items: center; */
+    /* flex-direction: column; */
     gap: 2rem;
-    box-sizing: border-box;
-}
-.buttons button {
-    width: 130px;
-    height: 50px;
-    background-color: darkslategray;
-    border: 0;
-    box-sizing: border-box;
-    color:white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    justify-content: center;
+    /* width: 100%;*/
+    /* height: auto;  */
 }
 
-.buttons button:hover {
-    cursor: pointer;
-    border: 8px solid rgb(26, 180, 165);
-    box-sizing: border-box;
+.game-button {
+    background-color: rgb(0, 119, 255);
+    height:9rem;
+    width:15rem;
+    transition: all 0.3s;
+}
+
+.game-button:hover {
+background-color: rgb(12, 57, 109);
+cursor: pointer;
+height:9rem;
+transform: rotate(-25deg);
+width:15rem;
+}
+
+.button-rock {
+-webkit-mask: url(./img/rock.svg) no-repeat center;
+mask: url(./img/rock.svg) no-repeat center;
+}
+.button-paper {
+-webkit-mask: url(./img/paper.svg) no-repeat center;
+mask: url(./img/paper.svg) no-repeat center;
+}
+.button-scissors {
+-webkit-mask: url(./img/scissors.svg) no-repeat center;
+mask: url(./img/scissors.svg) no-repeat center;
+}
+.button-scissors:hover {
+text-shadow: 0px 2px 4px red;
+
+
+    }
+
+.score, .bottomtext {
+    box-shadow: 0px 3px 4px black;
+    margin: 30px auto;
+    outline: 3px solid rgba(0, 0, 0, 0.441);
+    overflow: auto;
+    padding: 3px;
+    text-align: center;
+    width: 70%;
+    transition: all 3s;
+}
+
+.score {
+    font-size: larger;
+    height: 100px;
+}
+
+.bottomtext {
+    height: 300px;
+}
+.finalresult {
+    color: crimson;
+    font-size: x-large;
 }
