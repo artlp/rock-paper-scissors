@@ -2,7 +2,7 @@ body {
     background-image: url(./img/bg.jpg);
     background-repeat: repeat;
     background-size: auto;
-color: rgb(0, 119, 255);
+    color: rgb(0, 119, 255);
     font-family: 'Patua One', cursive;
 }
 h1 {
@@ -25,40 +25,37 @@ h1 {
 }
 
 .game-button {
-    background-color: rgb(0, 119, 255);
-    height:9rem;
-    width:15rem;
+    color: rgb(0, 119, 255);
+    height:auto;
     transition: all 0.3s;
+    width:15rem;
+    /* filter:  saturate(100%) hue-rotate(90deg) invert(100%) ; */
 }
 
 .game-button:hover {
-background-color: rgb(12, 57, 109);
-cursor: pointer;
-height:9rem;
-transform: rotate(-25deg);
-width:15rem;
+    color: rgb(12, 57, 109);
+    cursor: pointer;
+    height:auto;
+    transform: rotate(25deg);
+    width:15rem;
+
 }
 
-.button-rock {
--webkit-mask: url(./img/rock.svg) no-repeat center;
-mask: url(./img/rock.svg) no-repeat center;
+/* .button-rock {
+    -webkit-mask: url(./img/rock.svg) no-repeat center;
+    mask: url(./img/rock.svg) no-repeat center;
 }
 .button-paper {
--webkit-mask: url(./img/paper.svg) no-repeat center;
-mask: url(./img/paper.svg) no-repeat center;
+    -webkit-mask: url(./img/paper.svg) no-repeat center;
+    mask: url(./img/paper.svg) no-repeat center;
 }
 .button-scissors {
--webkit-mask: url(./img/scissors.svg) no-repeat center;
-mask: url(./img/scissors.svg) no-repeat center;
-}
-.button-scissors:hover {
-text-shadow: 0px 2px 4px red;
-
-
-    }
+    -webkit-mask: url(./img/scissors.svg) no-repeat center;
+    mask: url(./img/scissors.svg) no-repeat center;
+} */
 
 .score, .bottomtext {
-    box-shadow: 0px 3px 4px black;
+    box-shadow: 0px 5px 2px black;
     margin: 30px auto;
     outline: 3px solid rgba(0, 0, 0, 0.441);
     overflow: auto;
@@ -82,3 +79,16 @@ text-shadow: 0px 2px 4px red;
     color: crimson;
     font-size: 24px;
 }
+
+@media screen and (max-width: 426px){
+    h1 {
+        color: red;
+        font-size: 2.3rem;
+    }
+    .score {
+        font-size: 14px;
+        height: 100px;
+        line-height: 30px;
+    }
+
+    }

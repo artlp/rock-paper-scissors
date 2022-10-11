@@ -35,7 +35,7 @@ choiceButton.forEach((item) => {
         } else if (+item.getAttribute(`data-value`) === 2) {
             console.log("You chose Scissors");
         } else { }
-        item.style.backgroundColor = "red";
+        item.style.color = "crimson";
         playerChoice = +item.getAttribute(`data-value`);
         game();
     }));
