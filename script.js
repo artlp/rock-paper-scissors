@@ -45,53 +45,62 @@ function playRound(computerChoice, playerChoice) {
     switch (true) {
         case (computerChoice === 0 && playerChoice === 0):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: DRAW, you both chose Rock <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Rock &#9632;
+<br>`;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 0 && playerChoice === 1):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Paper beats Rock <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Paper beats Rock &#9650;
+            <br>`;
             playerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 0 && playerChoice === 2):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Rock beats Scissors <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Rock beats Scissors &#9660;
+            <br>`;
             computerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 0):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Paper beats Rock <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Paper beats Rock &#9660;
+            <br>`;
             computerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 1):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}:  DRAW, you both chose Paper <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}:  Draw, you both chose Paper &#9632;
+<br>`;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 1 && playerChoice === 2):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Scissors beat Paper <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Scissors beat Paper &#9650;
+            <br>`;
             playerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 0):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Rock beats Scissors <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Rock beats Scissors &#9650;
+            <br>`;
             playerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 1):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Scissors beat Paper <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Scissors beat Paper &#9660;
+            <br>`;
             computerScore++;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
         case (computerChoice === 2 && playerChoice === 2):
             roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: DRAW, you both chose Scissors <br>`;
+            battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Scissors &#9632;
+<br>`;
             scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
             break;
 

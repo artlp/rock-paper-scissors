@@ -65,12 +65,14 @@ text-shadow: 0px 2px 4px red;
     padding: 3px;
     text-align: center;
     width: 70%;
-    transition: all 3s;
+    /* transition: all 3s; */
+    /* background-color: rgba(0, 0, 0, 0.495); */
 }
 
 .score {
-    font-size: larger;
+    font-size: 20px;
     height: 100px;
+    line-height: 100px;
 }
 
 .bottomtext {
@@ -78,5 +80,5 @@ text-shadow: 0px 2px 4px red;
 }
 .finalresult {
     color: crimson;
-    font-size: x-large;
+    font-size: 24px;
 }
