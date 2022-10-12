@@ -38,149 +38,147 @@ choiceButton.forEach((item) => {
         playerChoice = +item.getAttribute(`data-value`);
         game();
     }));
-return choiceButton;
+    return choiceButton;
 });
 
 function playRound(computerChoice, playerChoice) {
-    switch (true) {
-        case (computerChoice === 0 && playerChoice === 0):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Rock &#9632;
+    if (playerScore < 5 && computerScore < 5) {
+        switch (true) {
+            case (computerChoice === 0 && playerChoice === 0):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Rock &#9632;
 <br>`;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "gold";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 0 && playerChoice === 1):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Paper beats Rock &#9650;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "gold";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 0 && playerChoice === 1):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Player wins, Paper beats Rock &#9650;
             <br>`;
-            playerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "green";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 0 && playerChoice === 2):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Rock beats Scissors &#9660;
+                playerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "green";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 0 && playerChoice === 2):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Rock beats Scissors &#9660;
             <br>`;
-            computerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "crimson";
-            break;
-        case (computerChoice === 1 && playerChoice === 0):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Paper beats Rock &#9660;
+                computerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "crimson";
+                break;
+            case (computerChoice === 1 && playerChoice === 0):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Paper beats Rock &#9660;
             <br>`;
-            computerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "crimson";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 1 && playerChoice === 1):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}:  Draw, you both chose Paper &#9632;
-<br>`;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "gold";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 1 && playerChoice === 2):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Scissors beat Paper &#9650;
+                computerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "crimson";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 1 && playerChoice === 1):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}:  Draw, you both chose Paper &#9632; <br>`;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "gold";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 1 && playerChoice === 2):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Player wins, Scissors beat Paper &#9650;
             <br>`;
-            playerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "green";
-            break;
-        case (computerChoice === 2 && playerChoice === 0):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Player wins, Rock beats Scissors &#9650;
+                playerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "green";
+                break;
+            case (computerChoice === 2 && playerChoice === 0):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Player wins, Rock beats Scissors &#9650;
             <br>`;
-            playerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "green";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 2 && playerChoice === 1):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Scissors beat Paper &#9660;
+                playerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "green";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 2 && playerChoice === 1):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Computer wins, Scissors beat Paper &#9660;
             <br>`;
-            computerScore++;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "crimson";
-            choiceButton[2].style.color = "";
-            break;
-        case (computerChoice === 2 && playerChoice === 2):
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "";
-            roundCounter++;
-            battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Scissors &#9632;
-<br>`;
-            scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
-            choiceButton[0].style.color = "";
-            choiceButton[1].style.color = "";
-            choiceButton[2].style.color = "gold";
-            break;
+                computerScore++;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "crimson";
+                choiceButton[2].style.color = "";
+                break;
+            case (computerChoice === 2 && playerChoice === 2):
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "";
+                roundCounter++;
+                battleLog.innerHTML += `Round ${roundCounter}: Draw, you both chose Scissors &#9632;<br>`;
+                scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
+                choiceButton[0].style.color = "";
+                choiceButton[1].style.color = "";
+                choiceButton[2].style.color = "gold";
+                break;
 
-        default:
-            console.log("error");
-            break;
+            default:
+                console.log("error");
+                break;
+        }
+        if (computerScore === 5) {
+            finaldiv.innerText = `COMPUTER WINS`;
+            document.querySelector("#reset").style.display = "block";
+            choiceButton[0].style.color = "crimson";
+            choiceButton[1].style.color = "crimson";
+            choiceButton[2].style.color = "crimson";
+        } else if (playerScore === 5) {
+            finaldiv.innerText = `PLAYER WINS`;
+            document.querySelector("#reset").style.display = "block";
+            choiceButton[0].style.color = "green";
+            choiceButton[1].style.color = "green";
+            choiceButton[2].style.color = "green";
+        }
     }
 }
-
 function game() {
-    if (computerScore === 5) {
-        finaldiv.innerText = `COMPUTER WINS`;
-        document.querySelector("#reset").style.display="block";
-        choiceButton[0].style.color = "crimson";
-        choiceButton[1].style.color = "crimson";
-        choiceButton[2].style.color = "crimson";
-    } else if (playerScore === 5) {
-        finaldiv.innerText = `PLAYER WINS`;
-        document.querySelector("#reset").style.display="block";
-        choiceButton[0].style.color = "green";
-        choiceButton[1].style.color = "green";
-        choiceButton[2].style.color = "green";
-    } else {
-        getComputerChoice();
-        playRound(computerChoice, playerChoice);
-    }
+    getComputerChoice();
+    playRound(computerChoice, playerChoice);
 }
 
 function reset() {
@@ -190,7 +188,7 @@ function reset() {
     scorediv.innerHTML = ``;
     battleLog.innerHTML = ``;
     finaldiv.innerHTML = ``;
-    document.querySelector("#reset").style.display="none";
+    document.querySelector("#reset").style.display = "none";
     choiceButton[0].style.color = "";
     choiceButton[1].style.color = "";
     choiceButton[2].style.color = "";
