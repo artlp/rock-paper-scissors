@@ -1,11 +1,29 @@
+@keyframes hands {
+    /* 0%   {transform: rotate(0deg);} */
+    20%  {transform: rotate(25deg);}
+    /* 40%  {transform: rotate(0deg);} */
+    60% {transform: rotate(-25deg);}
+    /* 80% {transform: rotate(0deg);} */
+  }
+@keyframes scissors {
+    /* 0%   {transform: rotate(90deg);} */
+    20%  {transform: rotate(115deg);}
+    /* 40%  {transform: rotate(90deg);} */
+    60% {transform: rotate(65deg);}
+    /* 80% {transform: rotate(90deg);} */
+  }
+
 body {
     background-image: url(./img/bg.jpg);
     background-repeat: repeat;
     background-size: auto;
     color: rgb(0, 119, 255);
     font-family: 'Patua One', cursive;
+    position: relative;
+    /* height: 100vh; */
 }
 h1 {
+    cursor: default;
     font-family: 'Press Start 2P', cursive;
     font-size: 4rem;
     line-height: 6rem;
@@ -19,6 +37,7 @@ h1 {
     /* align-items: center; */
     /* flex-direction: column; */
     gap: 2rem;
+    
     justify-content: center;
     /* width: 100%;*/
     /* height: auto;  */
@@ -27,6 +46,7 @@ h1 {
 .game-button {
     color: rgb(0, 119, 255);
     height:auto;
+    text-align: center;
     transition: all 0.3s;
     width:15rem;
     /* filter:  saturate(100%) hue-rotate(90deg) invert(100%) ; */
@@ -36,11 +56,17 @@ h1 {
     color: rgb(12, 57, 109);
     cursor: pointer;
     height:auto;
-    transform: rotate(25deg);
+    /* transform: rotate(25deg); */
+    animation-name: hands;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
     width:15rem;
 
 }
-
+/* .game-button:active {
+    transition: all 0.1s;
+    color: crimson;
+} */
 /* .button-rock {
     -webkit-mask: url(./img/rock.svg) no-repeat center;
     mask: url(./img/rock.svg) no-repeat center;
@@ -54,8 +80,22 @@ h1 {
     mask: url(./img/scissors.svg) no-repeat center;
 } */
 
+.fa-hand-scissors {
+   
+    /* transform: translateY(40px); */
+    transform: rotate(90deg);
+}
+.fa-hand-scissors:hover {
+
+    /* transform: rotate(115deg); */
+    animation-name: scissors;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
 .score, .bottomtext {
     box-shadow: 0px 5px 2px black;
+    cursor: default;
     margin: 30px auto;
     outline: 3px solid rgba(0, 0, 0, 0.441);
     overflow: auto;
@@ -66,29 +106,71 @@ h1 {
     /* background-color: rgba(0, 0, 0, 0.495); */
 }
 
+.bottomtext {
+    display:flex;
+    flex-direction: column-reverse;
+    height: 300px;
+}
 .score {
     font-size: 20px;
     height: 100px;
     line-height: 100px;
 }
-
-.bottomtext {
-    height: 300px;
+.battlelog {
+    order:1;
 }
 .finalresult {
     color: crimson;
     font-size: 24px;
+    line-height: 80px;
+    text-decoration: underline;
+}
+
+footer {
+    bottom: -3vh;
+    height: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+#reset {
+    background-color: transparent;
+    border: 0;
+    color: rgb(0, 119, 255);
+    cursor: pointer;
+    display:none;
+    font-family: 'Press Start 2P', cursive;
+    margin: 5px auto;
+    outline: 3px solid rgba(0, 0, 0, 0.441);
+    padding: 5px 20px;
+}
+
+#reset:hover {
+    color: crimson;
+    outline: 3px solid rgba(0, 0, 0, 0.687);
 }
 
 @media screen and (max-width: 426px){
     h1 {
-        color: red;
+        /* text-align: center; */
         font-size: 2.3rem;
+        line-height: 3.3rem;
     }
     .score {
         font-size: 14px;
         height: 100px;
         line-height: 30px;
     }
-
+    .score {
+        align-items: center;
+        display:flex;
+        justify-content: center;
+    }
+    .game-button {
+        color: rgb(0, 119, 255);
+        transition: all 0.3s;
+    }
+    .fa-10x {
+        font-size: 5em !important;
+    }
     }
