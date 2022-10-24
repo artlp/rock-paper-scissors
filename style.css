@@ -1,16 +1,18 @@
-@keyframes hands {
-    /* 0%   {transform: rotate(0deg);} */
+@-webkit-keyframes hands {
     20%  {transform: rotate(25deg);}
-    /* 40%  {transform: rotate(0deg);} */
     60% {transform: rotate(-25deg);}
-    /* 80% {transform: rotate(0deg);} */
+  }
+@keyframes hands {
+    20%  {transform: rotate(25deg);}
+    60% {transform: rotate(-25deg);}
+  }
+@-webkit-keyframes scissors {
+    20%  {transform: rotate(115deg);}
+    60% {transform: rotate(65deg);}
   }
 @keyframes scissors {
-    /* 0%   {transform: rotate(90deg);} */
     20%  {transform: rotate(115deg);}
-    /* 40%  {transform: rotate(90deg);} */
     60% {transform: rotate(65deg);}
-    /* 80% {transform: rotate(90deg);} */
   }
 
 body {
@@ -20,7 +22,6 @@ body {
     color: rgb(0, 119, 255);
     font-family: 'Patua One', cursive;
     position: relative;
-    /* height: 100vh; */
 }
 h1 {
     cursor: default;
@@ -34,12 +35,8 @@ h1 {
 .buttons {
     box-sizing: border-box;
     display:flex;
-    /* align-items: center; */
-    /* flex-direction: column; */
     gap: 2rem;
     justify-content: center;
-    /* width: 100%;*/
-    /* height: auto;  */
 }
 
 .game-button {
@@ -48,48 +45,34 @@ h1 {
     text-align: center;
     transition: all 0.3s;
     width:15rem;
-    /* filter:  saturate(100%) hue-rotate(90deg) invert(100%) ; */
 }
 
 .game-button:hover {
     color: rgb(12, 57, 109);
     cursor: pointer;
     height:auto;
-    /* transform: rotate(25deg); */
-    animation-name: hands;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: hands;
+            animation-name: hands;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     width:15rem;
 
 }
-/* .game-button:active {
-    transition: all 0.1s;
-    color: crimson;
-} */
-/* .button-rock {
-    -webkit-mask: url(./img/rock.svg) no-repeat center;
-    mask: url(./img/rock.svg) no-repeat center;
-}
-.button-paper {
-    -webkit-mask: url(./img/paper.svg) no-repeat center;
-    mask: url(./img/paper.svg) no-repeat center;
-}
-.button-scissors {
-    -webkit-mask: url(./img/scissors.svg) no-repeat center;
-    mask: url(./img/scissors.svg) no-repeat center;
-} */
 
 .fa-hand-scissors {
    
-    /* transform: translateY(40px); */
     transform: rotate(90deg);
 }
 .fa-hand-scissors:hover {
 
-    /* transform: rotate(115deg); */
-    animation-name: scissors;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: scissors;
+            animation-name: scissors;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 .score, .bottomtext {
@@ -101,8 +84,6 @@ h1 {
     padding: 3px;
     text-align: center;
     width: 70%;
-    /* transition: all 3s; */
-    /* background-color: rgba(0, 0, 0, 0.495); */
 }
 
 .bottomtext {

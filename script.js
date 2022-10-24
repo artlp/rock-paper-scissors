@@ -142,7 +142,7 @@ function playRound(computerChoice, playerChoice) {
                 computerScore++;
                 scorediv.innerHTML = `Rounds played: ${roundCounter}, Player: ${playerScore}, Computer: ${computerScore}`;
                 choiceButton[0].style.color = "";
-                choiceButton[1].style.color = "crimson";
+                choiceButton[1].style.color = "crimson"
                 choiceButton[2].style.color = "";
                 break;
             case (computerChoice === 2 && playerChoice === 2):
@@ -157,6 +157,7 @@ function playRound(computerChoice, playerChoice) {
                 choiceButton[2].style.color = "gold";
                 break;
 
+
             default:
                 console.log("error");
                 break;
@@ -169,7 +170,7 @@ function playRound(computerChoice, playerChoice) {
             choiceButton[2].style.color = "crimson";
         } else if (playerScore === 5) {
             finaldiv.innerText = `PLAYER WINS`;
-            document.querySelector("#reset").style.display = "block";
+            document.querySelector(`#reset`) .style.display = "block";
             choiceButton[0].style.color = "green";
             choiceButton[1].style.color = "green";
             choiceButton[2].style.color = "green";
